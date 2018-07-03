@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>   
+    <form name= "collect" action="#" method="get">
+        First Name:<br>
+            <input type="text" id="firstName" name="firstName" placeholder="Input here">
+        <br>
+        Last Name:<br>
+            <input type="text" id="lastName" name="lastName" placeholder="Input here">
+        <br>
+        Gender:<br>
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+            <input type="radio" name="gender" value="Other"> Other
+        <br>
+        Favorite Sport:<br>
+        <select name="sports">
+            <option value="">Select Below...</option>
+            <option value="Soccer">Soccer</option>
+            <option value="Hockey">Hockey</option>
+            <option value="Baseball">Baseball</option>
+            <option value="Football">Football</option>
+            <option value="Basketball">Basketball</option>
+        </select>
+        <br>
+        Pizza Toppings:<br>
+            <input type="checkbox" name="pizza" value="Pepperoni" /> Pepperoni<br>
+            <input type="checkbox" name="pizza" value="Olives" /> Olives<br>
+            <input type="checkbox" name="pizza" value="Jalapenos" /> Jalapenos<br>
+            <input type="checkbox" name="pizza" value="Mushrooms" /> Mushrooms<br>
+            <input type="checkbox" name="pizza" value="Onions" /> Onions<br>
+        <br>
+        <input class="submit" type="submit" name="Save" value="Save" onClick="submitForm(event)">
+  	</form>
+</body>
+</html>
