@@ -35,7 +35,6 @@
         fullNames.sort(sortLastName);
         var displayHtml = "";
         for (var i = 0; i < fullNames.length; i++) {
-            // console.log(fullNames[i][0]);
             displayHtml += "<li>" + fullNames[i][0] + " " + "<span class='lastName'>" + fullNames[i][1] + "</span>" + "</li>";
         }
         var ol = document.getElementById("namesList");
