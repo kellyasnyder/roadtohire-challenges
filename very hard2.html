@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>title goes here</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .lastName {
+            color: #cc0000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <ol id="namesList">
+    </ol>
+
+    <script>
+        var names = "Audrey Horne, Dale Cooper, Donna Hayward, Shelly Johnson, Laura Palmer, Bobby Briggs" ;
+        var namesArray = names.split(", ");
+        var fullNames = [];
+        for (var i = 0; i < namesArray.length; i++) {
+            fullNames.push(namesArray[i].split(" "));
+        }
+        function sortLastName (a, b) {
+            if (a[1] > b[1]) {
+                return 1;
+            } else {
+                return -1;
+            }
+        }
+        fullNames.sort(sortLastName);
+        var displayHtml = "";
+        for (var i = 0; i < fullNames.length; i++) {
+            // console.log(fullNames[i][0]);
+            displayHtml += "<li>" + fullNames[i][0] + " " + "<span class='lastName'>" + fullNames[i][1] + "</span>" + "</li>";
+        }
+        var ol = document.getElementById("namesList");
+        ol.innerHTML = displayHtml;
+    </script>
+</body>
+</html>
