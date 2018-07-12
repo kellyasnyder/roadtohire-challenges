@@ -1,0 +1,76 @@
+<!-- HARD: Recreate the pie chart in the picture provided. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>title goes here</title>
+    <style>
+        div {
+            display: inline-block;
+            color: white;
+        }
+
+        #chart {
+            width: 500px;
+            height: 500px;
+        }
+
+        #part1, #part2, #part3, #part4 {
+            height: 248px;
+            width: 248px;
+            position: relative;
+            background-color: black;
+        }
+
+        #part1 {
+            border-top-left-radius: 100%;
+        }
+
+        #part1 span {
+            top: 125px;
+            left: 125px;
+        }
+
+        #part2 {
+            border-top-right-radius: 100%;
+        }
+
+        #part2 span {
+            top: 125px;
+            left: 75px;
+        }
+
+        #part3 {
+            border-bottom-left-radius: 100%;
+        }
+
+        #part3 span {
+            top: 100px;
+            left: 125px;
+        }
+
+        #part4 {
+            border-bottom-right-radius: 100%;
+        }
+
+        #part4 span {
+            top: 100px;
+            left: 75px;
+        }
+
+        span {
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="chart">
+        <div id="part1"><span>Red</span></div>
+        <div id="part2"><span>Yellow</span></div>
+        <div id="part3"><span>Blue</span></div>
+        <div id="part4"><span>Green</span></div>
+      </div>
+</body>
+</html>
