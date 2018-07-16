@@ -6,49 +6,64 @@
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
-            width: 70%;
             margin: auto;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
+
+        nav {
+            background-color: black;
+            height: 50px;
         }
+
+        #logo {
+            height: 40px;
+            vertical-align: middle;
+            padding-top: 5px;
+            padding-left: 30px;
+        }
+
+        ul {
+            float: right;
+            background-color: black;
+            overflow: hidden;
+            padding-right: 30px;
+        }
+
         li {
             display: inline;
-            padding: 10px;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
         }
-        aside {
-            width: 40%;
-            float: right;
-            border-style: solid;
-            padding: 10px;
-            margin-top: 100px;
+
+        a, a:visited {
+            text-decoration: none;
         }
-        article {
-            border-style: solid;
-            width: 50%;
-            padding: 10px;
-            margin-top: 100px;
+
+        .large {
+            margin: auto
         }
-        footer {
-            border-style: solid;
-            margin-top: 25px;
-            padding: 10px;
+
+        .small {
+            margin: auto;
         }
-        .figure-img {
-            width: 100%;
+
+        .card {
+            margin: auto;
         }
     </style>
 </head>
 <body>
     <header>    
         <nav>
+        <a href="">
+            <img id="logo" src="https://vignette.wikia.nocookie.net/gtawiki/images/9/9a/PlayStation_1_Logo.png/revision/latest?cb=20100130082645" alt="Playstation Logo">
+        </a>
             <ul>
-                <li>Index</li>
-                <li>About</li>
-                <li>Testimonials</li>
-                <li>Contact</li>
-                <li>Social Media</li>
+                <li><a href="">Link-1</a></li>
+                <li><a href="">Link-2</a></li>
+                <li><a href="">Link-3</a></li>
+                <li><a href="">Link-4</a></li>
+                <li><a href="">Link-5</a></li>
             </ul>
         </nav>
     </header>
