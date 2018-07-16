@@ -40,9 +40,10 @@
             width: 100%;
             background-color: #777;
             margin: auto auto 0 auto;
+            padding: 10px;
         }
 
-        #logo {
+        .logo {
             height: 40px;
             vertical-align: middle;
             padding-top: 5px;
@@ -64,6 +65,7 @@
         }
 
         a, a:visited {
+            color: #000;
             text-decoration: none;
         }
 
@@ -79,10 +81,11 @@
 
         .small {
             width: 48%;
-            height: 158px;
+            height: 159px;
             background-color: #777;
             border: 1px #777 solid;
             float: right;
+            padding: 30px;
         }
 
         .header {
@@ -90,23 +93,52 @@
             background-color: #777;
             clear: both;
             text-align: center;
+            margin-bottom: 30px;
         }
 
         h1, p {
-            padding: 5px;
+            padding: 10px;
         }
 
-        .card {
-            margin: auto;
+        .columns, .tabs {
+	        display: flex;
+	        flex-flow: row wrap;
+	        justify-content: center;
+        }
+
+        .column {
+            flex: 1;
+            background-color: #777;
+            margin-right: 10px;
+            padding: 25px;
+            text-align: center
+        }
+
+        .column:nth-child(3), .tab:nth-child(4) {
+            margin-right: 0;
+        }
+
+        .tab {
+            flex: 1;
+            background-color: #777;
+            margin-top: 30px;
+            margin-right: 1px;
+            padding: 15px;
+            text-align: center
+        }
+
+        .paragraph {
+            width: 100%;
+            background-color: #777;
+            margin-top: 1px;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
     <header>    
         <nav>
-        <a href="">
-            <img id="logo" src="https://upload.wikimedia.org/wikipedia/hr/2/24/Adidas_logo.png" alt="Adidas Logo">
-        </a>
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/hr/2/24/Adidas_logo.png" alt="Adidas Logo">
             <ul>
                 <li><a href="">Link-1</a></li>
                 <li><a href="">Link-2</a></li>
@@ -121,8 +153,34 @@
         <p class="small">Things go here.</p>
         <p class="small">Things go here.</p>
         <div class="header"><h1>Header Statement</h1></div>
+        <div class="columns">
+            <div class="column">Card</div>
+            <div class="column">Card</div>
+            <div class="column">Card</div>
+        </div>
+        <div class="tabs">
+            <div class="tab">Tab</div>
+            <div class="tab">Tab</div>
+            <div class="tab">Tab</div>
+            <div class="tab">Tab</div>
+        </div>
+        <p class="paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu egestas sem, 
+            at rhoncus arcu. Vestibulum fermentum lectus a neque blandit pulvinar. Curabitur 
+            vehicula, orci imperdiet tristique mollis, dui ipsum faucibus est, non tempus mi 
+            libero quis sapien. Nulla facilisi. Sed vel ante volutpat, aliquet velit non, 
+            facilisis ligula. Nam a erat nec nibh fermentum facilisis in quis metus. Maecenas 
+            congue tristique ligula accumsan pharetra. Donec a ante imperdiet, mollis ante ut, 
+            viverra ex. Quisque bibendum sem ac congue porttitor. Nullam ut porta mi, in tempor 
+            leo. Aliquam nec augue finibus, scelerisque felis at, pretium est. Vivamus porta 
+            feugiat felis et lobortis. Morbi condimentum, ligula eget imperdiet rutrum, dui magna 
+            molestie nulla, ut auctor leo sem ac nunc. Sed blandit non lectus a scelerisque. 
+            Maecenas venenatis egestas mi, in semper est scelerisque quis. Lorem ipsum dolor sit 
+            amet, consectetur adipiscing elit.
+        </p>
     </main>
     <footer>
+        <img src="https://www.alt-codes.net/images/copyright-symbol.png" class="logo" alt="Copyright Symbol">
         <p>
             Footer text goes here.
         </p>
