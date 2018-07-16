@@ -1,17 +1,45 @@
+<!-- VERY HARD: Using what you know about the box model and positioning, build out what you see 
+    in the image provided. The background color is #777. Add whatever text you want instead of 
+    the placeholders. Add an image for the “large box”. Make sure the masthead sticks to the 
+    top of the page when you scroll down. Be creative! -->
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <title>title goes here</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             margin: auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         nav {
-            background-color: black;
+            width: 100%;
+            top: 0;
             height: 50px;
+            background-color: #777;
+            position: fixed;
+        }
+        
+        main {
+            width: 70%;
+            margin: auto;
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #777;
+            margin: auto auto 0 auto;
         }
 
         #logo {
@@ -23,7 +51,7 @@
 
         ul {
             float: right;
-            background-color: black;
+            background-color: #777;
             overflow: hidden;
             padding-right: 30px;
         }
@@ -40,11 +68,32 @@
         }
 
         .large {
-            margin: auto
+            width: 48%;
+            height: 350px;
+            background-color: #777;
+            border: 1px #777 solid;
+            margin-top: 17px;
+            margin-bottom: 30px;
+            float: left;
         }
 
         .small {
-            margin: auto;
+            width: 48%;
+            height: 158px;
+            background-color: #777;
+            border: 1px #777 solid;
+            float: right;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #777;
+            clear: both;
+            text-align: center;
+        }
+
+        h1, p {
+            padding: 5px;
         }
 
         .card {
@@ -56,7 +105,7 @@
     <header>    
         <nav>
         <a href="">
-            <img id="logo" src="https://vignette.wikia.nocookie.net/gtawiki/images/9/9a/PlayStation_1_Logo.png/revision/latest?cb=20100130082645" alt="Playstation Logo">
+            <img id="logo" src="https://upload.wikimedia.org/wikipedia/hr/2/24/Adidas_logo.png" alt="Adidas Logo">
         </a>
             <ul>
                 <li><a href="">Link-1</a></li>
@@ -67,53 +116,12 @@
             </ul>
         </nav>
     </header>
-    <aside>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget aliquet dolor. 
-                Proin vel dictum leo, non pellentesque diam. In quis mi metus. In laoreet ullamcorper 
-                iaculis. Proin eu est ut risus volutpat placerat. Nullam eleifend enim erat, vel molestie 
-                velit efficitur tempus. Nullam tristique euismod imperdiet. Duis facilisis mi lectus, a 
-                dapibus mi consequat eu. Vivamus dapibus consequat justo, vitae ornare sapien hendrerit a. 
-                Vivamus commodo vulputate arcu, vel vestibulum purus sollicitudin sed.
-            </p>
-            <p>
-                Aliquam congue hendrerit tortor nec rhoncus. Donec sed sapien interdum, finibus metus quis, 
-                aliquet sem. Duis mi ex, aliquam in mi ut, vehicula finibus mi. Ut eget diam porttitor, hendrerit 
-                ligula nec, pulvinar enim. Suspendisse varius mauris tortor, eget condimentum erat placerat a. 
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed commodo 
-                quam sed dolor congue molestie. Aenean vestibulum erat eu suscipit porttitor. Curabitur fermentum 
-                lorem purus, vel venenatis dolor accumsan et. Cras auctor lectus in ipsum efficitur luctus. 
-                Nunc hendrerit, sem quis mollis congue, tellus lorem fermentum arcu, nec suscipit mi augue vitae lacus. 
-                Mauris suscipit augue et porta lacinia. Morbi sagittis sapien elementum, condimentum felis a, lobortis 
-                augue. Proin imperdiet velit at dolor sagittis cursus. Vestibulum vitae aliquam tellus, in dignissim enim. 
-                Ut dignissim dolor et suscipit sagittis.
-            </p>
-        </aside>
-    <article>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget aliquet dolor. 
-            Proin vel dictum leo, non pellentesque diam. In quis mi metus. In laoreet ullamcorper 
-            iaculis. Proin eu est ut risus volutpat placerat. Nullam eleifend enim erat, vel molestie 
-            velit efficitur tempus. Nullam tristique euismod imperdiet. Duis facilisis mi lectus, a 
-            dapibus mi consequat eu. Vivamus dapibus consequat justo, vitae ornare sapien hendrerit a. 
-            Vivamus commodo vulputate arcu, vel vestibulum purus sollicitudin sed.
-        </p>
-        <figure>
-            <img src="kitty.jpg" alt="Figure Image" class="figure-img">
-        </figure>
-        <p>
-            Aliquam congue hendrerit tortor nec rhoncus. Donec sed sapien interdum, finibus metus quis, 
-            aliquet sem. Duis mi ex, aliquam in mi ut, vehicula finibus mi. Ut eget diam porttitor, hendrerit 
-            ligula nec, pulvinar enim. Suspendisse varius mauris tortor, eget condimentum erat placerat a. 
-            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed commodo 
-            quam sed dolor congue molestie. Aenean vestibulum erat eu suscipit porttitor. Curabitur fermentum 
-            lorem purus, vel venenatis dolor accumsan et. Cras auctor lectus in ipsum efficitur luctus. 
-            Nunc hendrerit, sem quis mollis congue, tellus lorem fermentum arcu, nec suscipit mi augue vitae lacus. 
-            Mauris suscipit augue et porta lacinia. Morbi sagittis sapien elementum, condimentum felis a, lobortis 
-            augue. Proin imperdiet velit at dolor sagittis cursus. Vestibulum vitae aliquam tellus, in dignissim enim. 
-            Ut dignissim dolor et suscipit sagittis.
-        </p>
-    </article>
+    <main>
+        <img src="very-easy-challenge.jpg" class="large">
+        <p class="small">Things go here.</p>
+        <p class="small">Things go here.</p>
+        <div class="header"><h1>Header Statement</h1></div>
+    </main>
     <footer>
         <p>
             Footer text goes here.
