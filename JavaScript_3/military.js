@@ -10,7 +10,8 @@
 // Do error messages for incorrect inputs
 
 function timeConvertor(time) {
-    var PM = time.match('PM') ? true : false;
+    var PM = time.match('PM');
+	var AM = time.match('AM');
     
     time = time.split(':');
     var min = time[1];
@@ -18,13 +19,16 @@ function timeConvertor(time) {
     if (PM) {
         var hour = 12 + parseInt(time[0],10);
         var sec = time[2].replace('PM', '');
-        console.log(hour + ':' + min + ':' + sec);
-    } else if (!PM) {
+				console.log(hour + ':' + min + ':' + sec);
+    } else if (AM) {
         var hour = time[0];
-        var sec = time[2].replace('AM', '');    
+        var sec = time[2].replace('AM', '');
+				console.log(hour + ':' + min + ':' + sec);
+    } else {
+        console.log("Please input correct format – HR:MIN:SEC(AM/PM)");
     }
-    
-    console.log(hour + ':' + min + ':' + sec);
 }
 
+timeConvertor('07:05:45AM');
 timeConvertor('07:05:45PM');
+timeConvertor('07:05:45');

@@ -33,7 +33,7 @@
 function stairs(n) {
     var s = '';
     for (var i = 1; i <= n; i++) {
-        s += ' '.repeat(n - i) + '#'.repeat(i)  + '\n';
+        s += ' '.repeat(n - i) + '#'.repeat(i) + '\n';
     }
     console.log(s);
 }
