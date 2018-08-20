@@ -105,7 +105,6 @@ Customer.prototype.email = function () {
     console.log(this.address + ", " + this.city + ", " + this.state + ", " + this.zipCode + ".");
     console.log("Your order:");
     this.order.print();
-    console.log("Your total is" + this.total);
     console.log("If you have any concerns, please contact customer service.");
     console.log("Sincerely,");
     console.log("Joe Business-Guy");
