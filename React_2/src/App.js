@@ -29,7 +29,6 @@ class App extends Component {
   }
 
   handleSubmit(event) {
-    alert(this.state.message + this.state.targetNumber + this.state.value + this.compareNumbers());
     event.preventDefault();
   }
 
