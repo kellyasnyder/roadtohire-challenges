@@ -1,0 +1,38 @@
+<!-- HARD: Create a page with a form to enter your longitude and latitude. When the form is submitted,
+display a list of date/times that the International Space Station will pass over the given location. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>astronauts in space</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <form id="postForm">
+            <input type="text" id="latitude" placeholder="Enter latitude">
+            <input type="text" id="longitude" placeholder="Enter longitude">
+            <input type="submit" value="Submit">
+        </form>
+        <ul id="result"></ul>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('#postForm').submit(function(e) {
+                e.preventDefault();
+                var longitude = $('#longitude').val();
+                var latitude = $('#latitude').val();
+
+                $.getJSON('http://api.open-notify.org/iss-pass.json?callback=?', {lon:longitude, lat:latitude})
+                .done(function(data) {
+                    data['response'].forEach(function (d) {
+                        var date = new Date(d['risetime']*1000);
+                        $('#result').append('<li>' + date.toString() + '</li>');
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

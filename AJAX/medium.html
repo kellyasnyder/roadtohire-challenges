@@ -1,0 +1,33 @@
+<!-- MEDIUM: Using a weather API, fetch and display weather for Charlotte to a webpage that you create.
+You should display at a minimum the current temperature and sky conditions.
+This API: https://openweathermap.org/current is free. It just requires an account be created.
+You can browse other weather APIs if you would like to use something else. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>charlotte weather</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <ul id="weather"></ul> 
+
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                method:'GET',
+                url: 'http://api.openweathermap.org/data/2.5/weather?q=charlotte&appid=19286fdb53ca53311e87105133bb26e5',
+                dataType: 'json'
+            }).done(function(data) {
+                $.map(data, function(weather, i){
+                    $('#weather').append('<li>' + weather.temp + '</li>');
+                });
+                $.map(data.weather, function(weather, i){
+                    $('#weather').append('<li>' + weather.main + '</li>');
+                });
+            });
+        })
+    </script>
+</body>
+</html>
