@@ -11,7 +11,7 @@ You can browse other weather APIs if you would like to use something else. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-    <ul id="weather"></ul> 
+    <div id="weather"></div> 
 
     <script>
         $(document).ready(function(){
@@ -21,10 +21,11 @@ You can browse other weather APIs if you would like to use something else. -->
                 dataType: 'json'
             }).done(function(data) {
                 $.map(data, function(weather, i){
-                    $('#weather').append('<li>' + weather.temp + '</li>');
+                    $('#weather').append('<p>' + weather.temp + '</p>');
                 });
                 $.map(data.weather, function(weather, i){
-                    $('#weather').append('<li>' + weather.main + '</li>');
+                    $('#weather').append('<p>' + 'Current weather condition: ' + weather.main + '</p>');
+                    $('#weather').append('<p>' + 'Weather condition description: ' + weather.description + '</p>');
                 });
             });
         })

@@ -5,7 +5,7 @@ display a list of date/times that the International Space Station will pass over
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>astronauts in space</title>
+    <title>internation space station</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
@@ -15,6 +15,7 @@ display a list of date/times that the International Space Station will pass over
             <input type="text" id="longitude" placeholder="Enter longitude">
             <input type="submit" value="Submit">
         </form>
+        <button id="geolocation">Auto Locate</button>
         <ul id="result"></ul>
     </div>
     <script>
@@ -32,7 +33,24 @@ display a list of date/times that the International Space Station will pass over
                     });
                 });
             });
-        });
+
+// HARD PT. 2: Add a button to your HARD solution that will use the browsers geolocation
+// to set the longitude and latitude automatically.    
+
+            $('#geolocation').click(function() {
+                if("geolocation" in navigator) {
+	                navigator.geolocation.getCurrentPosition(function(position) {
+                        $.getJSON('http://api.open-notify.org/iss-pass.json?callback=?', {lon:position.coords.longitude, lat:position.coords.latitude})
+                            .done(function(data) {
+                                data['response'].forEach(function (d) {
+                                var date = new Date(d['risetime']*1000);
+                                $('#result').append('<li>' + date.toString() + '</li>');
+                            });
+                        })
+                    });
+                };
+            });
+	    });
     </script>
 </body>
 </html>
