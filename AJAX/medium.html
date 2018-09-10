@@ -11,24 +11,61 @@ You can browse other weather APIs if you would like to use something else. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-    <div id="weather"></div> 
+    <form id="myForm">
+        <input type="text" name="city" id="input">
+        <button>Submit</button>
+    </form>
+    <div id="output"></div>
+    <div id="charlotte"></div>
 
     <script>
-        $(document).ready(function(){
-            $.ajax({
-                method:'GET',
-                url: 'http://api.openweathermap.org/data/2.5/weather?q=charlotte&appid=19286fdb53ca53311e87105133bb26e5',
-                dataType: 'json'
-            }).done(function(data) {
-                $.map(data, function(weather, i){
-                    $('#weather').append('<p>' + weather.temp + '</p>');
-                });
-                $.map(data.weather, function(weather, i){
-                    $('#weather').append('<p>' + 'Current weather condition: ' + weather.main + '</p>');
-                    $('#weather').append('<p>' + 'Weather condition description: ' + weather.description + '</p>');
-                });
-            });
+        function charlotteWeather(data) {
+            let charlotte = document.getElementById('charlotte');
+
+            fetch(`http://api.openweathermap.org/data/2.5/weather?q=charlotte&units=imperial&appid=19286fdb53ca53311e87105133bb26e5`)
+            .then(response => response.json())
+            .then (data => charlotteStuff(data))
+            
+            function charlotteStuff(data) {
+                let tempMin = Math.floor(data.main.temp_min);
+                let tempMax = Math.ceil(data.main.temp_max);
+
+                charlotte.innerHTML = `
+                    <p>The temperature in Charlotte today will be between ${tempMin}F and ${tempMax}F.</p>
+                `
+            }
+        }
+
+// MEDIUM PT. 2: Add an input field and button on your page that let's the user enter a city
+// and update the weather to the city of their choosing. Handle errors if a user enters bad input.
+
+        let output = document.getElementById('output');
+        let myForm = document.getElementById('myForm');
+        
+        myForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            run();
         })
+
+        function run() {
+            let input = document.getElementById('input').value;
+
+            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${input}&units=imperial&appid=19286fdb53ca53311e87105133bb26e5`)
+            .then(response => response.json())
+            .then(data => weatherTracker(data))
+
+            function weatherTracker(data) {
+                if (data.code !== 200) {
+                    output.innerHTML = 'Please enter a correct city name.';
+                }
+                let tempMin = Math.floor(data.main.temp_min);
+                let tempMax = Math.ceil(data.main.temp_max);
+
+                output.innerHTML = `
+                <p>The temperature in ${data.name} today will be between ${tempMin}F and ${tempMax}F.</p>
+                `
+            }
+        }
     </script>
 </body>
 </html>
