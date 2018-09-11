@@ -26,6 +26,8 @@ display a list of date/times that the International Space Station will pass over
                 var longitude = $('#longitude').val();
                 var latitude = $('#latitude').val();
 
+                // callback treats request as if it's requesting an external javascript file
+
                 $.getJSON('http://api.open-notify.org/iss-pass.json?callback=?', {lon:longitude, lat:latitude})
                 .done(function(data) {
                     data['response'].forEach(function (d) {

@@ -12,17 +12,18 @@ You can browse other weather APIs if you would like to use something else. -->
 </head>
 <body>
     <form id="myForm">
-        <input type="text" name="city" id="input">
+        <input type="text" name="city" id="input" placeholder="Enter city name">
         <button>Submit</button>
     </form>
     <div id="output"></div>
     <div id="charlotte"></div>
 
     <script>
-        function charlotteWeather(data) {
-            let charlotte = document.getElementById('charlotte');
+        let charlotte = document.getElementById('charlotte');
 
-            fetch(`http://api.openweathermap.org/data/2.5/weather?q=charlotte&units=imperial&appid=19286fdb53ca53311e87105133bb26e5`)
+        function charlotteWeather(data) {
+
+            fetch(`http://api.openweathermap.org/data/2.5/weather?q=charlotte,us&units=imperial&appid=19286fdb53ca53311e87105133bb26e5`)
             .then(response => response.json())
             .then (data => charlotteStuff(data))
             
@@ -62,7 +63,7 @@ You can browse other weather APIs if you would like to use something else. -->
                 let tempMax = Math.ceil(data.main.temp_max);
 
                 output.innerHTML = `
-                <p>The temperature in ${data.name} today will be between ${tempMin}F and ${tempMax}F.</p>
+                    <p>The temperature in ${data.name} today will be between ${tempMin}F and ${tempMax}F.</p>
                 `
             }
         }
