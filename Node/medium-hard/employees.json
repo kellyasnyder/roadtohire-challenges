@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Audrey Horne",
+        "salary": "100k",
+        "department": "tech"
+    },
+    {
+        "id": 2,
+        "name": "Dale Cooper",
+        "salary": "90k",
+        "department": "security"
+    },
+    {
+        "id": 3,
+        "name": "Laura Palmer",
+        "salary": "25k",
+        "department": "sales"
+    },
+    {
+        "id": 4,
+        "name": "Bobby Briggs",
+        "salary": "30k",
+        "department": "sales"
+    },
+    {
+        "id": 5,
+        "name": "Shelly Johnson",
+        "salary": "80k",
+        "department": "tech"
+    },
+    {
+        "id": 6,
+        "name": "Donna Hayward",
+        "salary": "40k",
+        "department": "sales"
+    },
+    {
+        "id": 7,
+        "name": "James Hurley",
+        "salary": "60k",
+        "department": "security"
+    },
+    {
+        "id": 8,
+        "name": "Fox Mulder",
+        "salary": "70k",
+        "department": "tech"
+    },
+    {
+        "id": 9,
+        "name": "Dana Scully",
+        "salary": "70k",
+        "department": "security"
+    },
+    {
+        "id": 10,
+        "name": "Walter Skinner",
+        "salary": "50k",
+        "department": "sales"
+    }
+]
