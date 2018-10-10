@@ -12,8 +12,6 @@
 // {quantity} {item name} - {item description} {price}
 // ... repeat for all items
  
-// Your total is {total price}
- 
 // If you have any concerns, please contact customer service.
  
 // Sincerely,

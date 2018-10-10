@@ -41,7 +41,6 @@ app.get('/employees/:id', (req, res) => {
 app.post('/employees', (req, res) => {
     const {id, name, salary, department} = req.body;
     if (id && name && salary && department) {
-        console.log("hi");
         const newEmployee = {
             id,
             name,
